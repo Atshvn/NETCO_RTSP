@@ -6,13 +6,6 @@ const cors = require('cors')
 const app = express();
 app.use(cors());
 
-const options = {
-  key: fs.readFileSync("./__vps_vn.key", 'utf8'),
-  cert: fs.readFileSync("./star_vps_vn_cert.pem", 'utf8'),
-};
-
-const server = https.createServer(options, app);
-
 const { proxy, scriptUrl } = rtspRelay(app); //, server
 
 //Get 
