@@ -2,8 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "app.js",
-        "use": "@rtsp-relay/index"
+        "src": "app.js"
       }
     ],
     "routes": [
