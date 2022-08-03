@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
-const PORT = 8000;
+const PORT = process.env.PORT ||  8000;
 app.listen(PORT, () => {
   console.log('Server is running port ' + PORT)
 });
