@@ -32,7 +32,7 @@ app.get('/:username/:password/:domain/:channel', (req, res) => {
   <script src='${scriptUrl}'></script>
   <script>
     loadPlayer({
-      url: 'ws://' + location.host + '/api/stream/${req.params.username}/${req.params.password}/${domain}/${req.params.channel}/${port}',
+      url: 'wss://' + location.host + '/api/stream/${req.params.username}/${req.params.password}/${domain}/${req.params.channel}/${port}',
       canvas: document.getElementById('canvas')
     });
     
