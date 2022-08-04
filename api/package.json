@@ -2,6 +2,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "pusher": "^5.1.1-beta",
     "rtsp-relay": "^1.6.1"
   },
   "scripts": {
