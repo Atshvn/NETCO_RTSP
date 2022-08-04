@@ -17,6 +17,7 @@ const channels = new Channels({
 module.exports = (req, res) => {
   const data = req.body;
   channels.trigger('rtsp', 'call', data, () => {
+    console.log('call');
     res.status(200).end('sent event successfully');
   });
 };
