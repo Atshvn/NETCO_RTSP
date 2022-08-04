@@ -1,17 +1,6 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app.js"
-      }
-    ],
+    
     "env": {
         "APP_ID": "1457422",
         "KEY": "cedb822271ce03b61013",
