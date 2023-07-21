@@ -13,7 +13,23 @@ app.ws('/api/stream/:username/:password/:domain/:channel/:port', (ws, req) => {
   proxy({
     url: `rtsp://${req.params.username}:${req.params.password}@${req.params.domain}.kbvision.tv:${req.params.port}/cam/realmonitor?channel=${req.params.channel}&subtype=0`,
     verbose: false,
-    transport: 'tcp'
+    transport: 'tcp',
+    additionalFlags: [
+      "-f", // force format
+      "hls",
+      "-codec:v", // specify video codec (MPEG1 required for jsmpeg)
+      "mpeg1video",
+      "-r",
+      "30", // 30 fps. any lower and the client can't decode it
+      "-preset",
+      "slow",
+      "-crf",
+      "18",
+      "-b:v",
+      "3M",
+      "-s",
+      "650x450",
+    ],
   })(ws)
 }
 );
